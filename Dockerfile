@@ -5,13 +5,13 @@ ARG VERSION=v1.7.17
 RUN set -ex \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && apt-get update \
-    && apt-get install -y zip unzip
+    && apt-get install -y zip unzip \
     && rm -rf /var/lib/apt/lists/*
 
 ARG WORKDIR=/opt/ossutil
 
 RUN set -ex \
-    && git clone -b ${VERSION} --depth=1 https://github.com/aliyun/ossutil
+    && git clone -b ${VERSION} --depth=1 https://github.com/aliyun/ossutil ${WORKDIR}
 
 ADD build_all.sh ${WORKDIR}/scripts/build_all.sh
 
