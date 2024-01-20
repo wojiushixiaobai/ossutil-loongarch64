@@ -1,6 +1,6 @@
 FROM golang:1.21-buster as builder
 
-ARG VERSION=v1.7.17
+ARG VERSION=v1.7.18
 
 RUN set -ex \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
